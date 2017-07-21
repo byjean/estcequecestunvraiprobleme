@@ -27,8 +27,11 @@
     <h1> Est-ce que c'est un vrai probleme ?</h1>
     <form method="GET" action="http://fauxprobleme.fr"  class="col">    
         <h3>Décrivez votre problème</h3>
-        <input type="text"  style="width:50%;height:34px;line-height:34px;font-size:1.6rem" ></input><br>
+        <input id="probleme" type="text"  style="width:50%;height:34px;line-height:34px;font-size:1.6rem" ></input><br>
         <input type="submit" value="Vérifier" style="visibility: hidden;" ></input>
     </form>
+    <script>
+        document.getElementById("probleme").value=new URL(window.location.href).searchParams.get("q")
+    </script>
     </body>
 </html>
